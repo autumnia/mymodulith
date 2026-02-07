@@ -1,14 +1,12 @@
-package com.autumnia.mymodulith.inventory.entity;
+package com.autumnia.mymodulith.inventory;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.UUID;
-
 @Data
 @Entity
 @Table(indexes = @Index(name="ivn_name_idx", columnList = "name"))
-public class Inventory {
+public class InventoryEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
