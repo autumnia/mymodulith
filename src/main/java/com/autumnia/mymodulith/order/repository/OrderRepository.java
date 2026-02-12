@@ -1,13 +1,13 @@
 package com.autumnia.mymodulith.order.repository;
 
-import com.autumnia.mymodulith.order.entity.Order;
+import com.autumnia.mymodulith.order.OrderEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-interface OrderRepository extends CrudRepository<Order, Long> {
-    Optional<Order> getOrderByOrderIdentifier(String orderIdentifier);
+public interface OrderRepository extends CrudRepository<OrderEntity, Long> {
+    Optional<OrderEntity> getOrderByOrderIdentifier(String orderIdentifier);
 
 }

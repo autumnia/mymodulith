@@ -1,6 +1,6 @@
 package com.autumnia.mymodulith.inventory.exposed;
 
-public record InventoryRequestDto(
+public record InventoryDto(
         Long id,
         String name,
         String description,

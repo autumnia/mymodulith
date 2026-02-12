@@ -1,12 +1,12 @@
 package com.autumnia.mymodulith.order.repository;
 
-import com.autumnia.mymodulith.order.entity.OrderInventory;
+import com.autumnia.mymodulith.order.OrderInventoryEntity;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-interface OrderInventoryRepository extends CrudRepository<OrderInventory, Long> {
+interface OrderInventoryRepository extends CrudRepository<OrderInventoryEntity, Long> {
     @Query(nativeQuery=true, value="SELECT SUM(oi.total_qty_price) FROM order_inventory oi WHERE oi.order_id = ?1 ")
     Long orderIdAmount(long orderId);
 }

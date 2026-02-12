@@ -1,10 +1,7 @@
-package com.autumnia.mymodulith.order.entity;
+package com.autumnia.mymodulith.order;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.sql.Timestamp;
-import java.time.Instant;
 
 @Data
 @Entity
@@ -12,7 +9,7 @@ import java.time.Instant;
     @Index(name="ord_idx", columnList = "order_id"),
     @Index(name="inv_idx", columnList = "inventory_id")
 })
-public class OrderInventory {
+public class OrderInventoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

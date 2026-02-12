@@ -1,4 +1,4 @@
-package com.autumnia.mymodulith.order.entity;
+package com.autumnia.mymodulith.order;
 
 import com.autumnia.mymodulith.order.service.OrderStatus;
 import jakarta.persistence.*;
@@ -10,7 +10,7 @@ import java.time.Instant;
 @Data
 @Entity
 @Table(name="orders")
-public class Order {
+public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

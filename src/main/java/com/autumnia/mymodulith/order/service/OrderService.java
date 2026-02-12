@@ -1,6 +1,8 @@
 package com.autumnia.mymodulith.order.service;
 
 import jakarta.persistence.AttributeConverter;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.autumnia.mymodulith.order.entity;
+package com.autumnia.mymodulith.order;
 
 import com.autumnia.mymodulith.order.service.OrderService;
 import org.junit.jupiter.api.Test;

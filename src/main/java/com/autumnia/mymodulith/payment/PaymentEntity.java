@@ -1,4 +1,4 @@
-package com.autumnia.mymodulith.payment.entity;
+package com.autumnia.mymodulith.payment;
 
 import com.autumnia.mymodulith.payment.service.PaymentStatus;
 import jakarta.persistence.*;
@@ -10,7 +10,7 @@ import java.time.Instant;
 @Data
 @Entity
 @Table(name="payment")
-public class Payment {
+public class PaymentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
