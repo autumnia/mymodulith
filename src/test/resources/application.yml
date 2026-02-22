@@ -12,5 +12,5 @@ spring:
 logging:
   level:
     org.springframework: ERROR
-    org.springframework.modulith: DEBUG
-    org.springframework.web: DEBUG
+    org.springframework.modulith: WARN
+    org.springframework.web: WARN

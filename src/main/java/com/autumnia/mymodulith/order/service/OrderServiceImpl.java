@@ -2,10 +2,12 @@ package com.autumnia.mymodulith.order.service;
 
 import com.autumnia.mymodulith.inventory.exposed.InventoryDto;
 import com.autumnia.mymodulith.inventory.exposed.InventoryService;
-import com.autumnia.mymodulith.order.dto.InventoryRequestDto;
-import com.autumnia.mymodulith.order.dto.OrderRequestDto;
 import com.autumnia.mymodulith.order.OrderEntity;
 import com.autumnia.mymodulith.order.OrderInventoryEntity;
+import com.autumnia.mymodulith.order.dto.InventoryRequestDto;
+import com.autumnia.mymodulith.order.dto.OrderPaymentDto;
+import com.autumnia.mymodulith.order.dto.OrderRequestDto;
+import com.autumnia.mymodulith.order.dto.OrderResponseDto;
 import com.autumnia.mymodulith.order.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,8 +22,9 @@ import java.util.concurrent.atomic.AtomicLong;
 public class OrderServiceImpl implements OrderService{
     private final InventoryService inventoryService;
     private final OrderRepository orderRepository;
+    private final OrderEventService orderEventService;
 
-    public OrderRequestDto createOrder(OrderRequestDto orderRequestDto) {
+    public OrderResponseDto createOrder(OrderRequestDto orderRequestDto) {
         // get inventories by name
         List<String> inventory_names = orderRequestDto.inventoryRequestDtoList()
                 .stream()
@@ -36,11 +39,12 @@ public class OrderServiceImpl implements OrderService{
         log.info("Order created: {}", orderEntity);
 
         // save inventory
-        final AtomicLong amout = new AtomicLong();
-        this.save_order_inventory(orderRequestDto, inventoryDtoList, orderEntity.getId(), amout );
+        final AtomicLong amoumt = new AtomicLong();
+        this.save_order_inventory(orderRequestDto, inventoryDtoList, orderEntity.getId(), amoumt );
+        OrderPaymentDto orderPaymentDto = new OrderPaymentDto( orderEntity.getOrderIdentifier(), amoumt.get() );
+        orderEventService.complete_order(orderPaymentDto ) ;
 
-
-        return null;
+        return new OrderResponseDto("Order currently processed", 102);
     }
 
     private void save_order_inventory(

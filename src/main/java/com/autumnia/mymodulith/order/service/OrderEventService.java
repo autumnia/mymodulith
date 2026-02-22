@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @Service
@@ -12,7 +13,9 @@ import org.springframework.stereotype.Service;
 public class OrderEventService {
     private final ApplicationEventPublisher eventPublisher;
 
-    public void order_completed(final OrderPaymentDto orderPaymentDto) {
+
+    @Transactional
+    public void complete_order(final OrderPaymentDto orderPaymentDto) {
         log.info("completing order payment with details: {}", orderPaymentDto);
         eventPublisher.publishEvent(orderPaymentDto);
     }
