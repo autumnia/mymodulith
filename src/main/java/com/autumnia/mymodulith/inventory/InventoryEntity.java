@@ -5,7 +5,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(indexes = @Index(name="ivn_name_idx", columnList = "name"))
+@Table(name="inventory")
+//@Table(indexes = @Index(name="ivn_name_idx", columnList = "name"))
 public class InventoryEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

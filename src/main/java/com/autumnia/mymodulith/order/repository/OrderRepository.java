@@ -1,6 +1,6 @@
 package com.autumnia.mymodulith.order.repository;
 
-import com.autumnia.mymodulith.order.OrderEntity;
+import com.autumnia.mymodulith.order.entity.OrderEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
-package com.autumnia.mymodulith.order;
+package com.autumnia.mymodulith.order.entity;
 
-import com.autumnia.mymodulith.order.service.OrderStatus;
+import com.autumnia.mymodulith.order.service.OrderService;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,5 +19,5 @@ public class OrderEntity {
     private String customerName;
     private String customerEmail;
     private Timestamp orderDate = Timestamp.from(Instant.now());
-    private OrderStatus status = OrderStatus.OPEN;
+    private OrderService.OrderStatus status = OrderService.OrderStatus.OPEN;
 }

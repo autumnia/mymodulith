@@ -2,8 +2,8 @@ package com.autumnia.mymodulith.order.service;
 
 import com.autumnia.mymodulith.inventory.exposed.InventoryDto;
 import com.autumnia.mymodulith.inventory.exposed.InventoryService;
-import com.autumnia.mymodulith.order.OrderEntity;
-import com.autumnia.mymodulith.order.OrderInventoryEntity;
+import com.autumnia.mymodulith.order.entity.OrderEntity;
+import com.autumnia.mymodulith.order.entity.OrderInventoryEntity;
 import com.autumnia.mymodulith.order.dto.InventoryRequestDto;
 import com.autumnia.mymodulith.order.dto.OrderPaymentDto;
 import com.autumnia.mymodulith.order.dto.OrderRequestDto;

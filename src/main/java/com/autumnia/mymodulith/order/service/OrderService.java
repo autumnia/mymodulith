@@ -2,11 +2,23 @@ package com.autumnia.mymodulith.order.service;
 
 import jakarta.persistence.AttributeConverter;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Arrays;
 
 public interface OrderService {
+
+    @AllArgsConstructor
+    @Getter
+    enum OrderStatus {
+        OPEN("O"),
+        FAILED("F"),
+        COMPLIETE("C");
+
+        private final String code;
+    }
 
 //    @Converter(autoApply = true)
     final class Smart implements AttributeConverter<OrderStatus, String> {

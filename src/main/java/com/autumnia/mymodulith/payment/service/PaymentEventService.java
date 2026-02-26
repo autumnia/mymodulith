@@ -18,7 +18,7 @@ public class PaymentEventService {
     @Async
     @TransactionalEventListener
     void on(final OrderPaymentDto orderPaymentDto) {
-        log.info( "order payment received in listener: {}", orderPaymentDto);
-
+        throw new RuntimeException("this failed");
+//        log.info( "order payment received in listener: {}", orderPaymentDto);
     }
 }

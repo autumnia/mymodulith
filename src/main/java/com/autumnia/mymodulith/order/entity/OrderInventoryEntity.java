@@ -1,14 +1,15 @@
-package com.autumnia.mymodulith.order;
+package com.autumnia.mymodulith.order.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(indexes ={
-    @Index(name="ord_idx", columnList = "order_id"),
-    @Index(name="inv_idx", columnList = "inventory_id")
-})
+@Table(name="order_inventory")
+//@Table(indexes ={
+//    @Index(name="ord_idx", columnList = "order_id"),
+//    @Index(name="inv_idx", columnList = "inventory_id")
+//})
 public class OrderInventoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
