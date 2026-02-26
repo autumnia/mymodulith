@@ -1,6 +1,6 @@
 package com.autumnia.mymodulith.payment.entity;
 
-import com.autumnia.mymodulith.payment.service.PaymentStatus;
+import com.autumnia.mymodulith.payment.service.PaymentService;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,5 +18,5 @@ public class PaymentEntity {
     private String orderId;
     private long amount;
     private Timestamp paymentDate = Timestamp.from(Instant.now());
-    private PaymentStatus status = PaymentStatus.INCOMPLETED;
+    private PaymentService.PaymentStatus status = PaymentService.PaymentStatus.INCOMPLETED;
 }
