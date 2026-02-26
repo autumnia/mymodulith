@@ -1,4 +1,4 @@
-package com.autumnia.mymodulith.payment;
+package com.autumnia.mymodulith.payment.entity;
 
 import com.autumnia.mymodulith.payment.service.PaymentStatus;
 import jakarta.persistence.*;

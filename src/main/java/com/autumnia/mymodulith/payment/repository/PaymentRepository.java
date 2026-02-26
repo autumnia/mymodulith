@@ -1,6 +1,6 @@
 package com.autumnia.mymodulith.payment.repository;
 
-import com.autumnia.mymodulith.payment.PaymentEntity;
+import com.autumnia.mymodulith.payment.entity.PaymentEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

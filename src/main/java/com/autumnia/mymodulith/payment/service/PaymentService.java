@@ -2,10 +2,22 @@ package com.autumnia.mymodulith.payment.service;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.Arrays;
 
 public interface PaymentService {
+
+    @Getter
+    @AllArgsConstructor
+    enum PaymentStatus {
+        INCOMPLETED("I"),
+        COMPLETED("C"),
+        FAILED("F");
+
+        private final String code;
+    }
 
     @Converter(autoApply = true)
     final class Smart implements AttributeConverter<PaymentStatus, String> {
